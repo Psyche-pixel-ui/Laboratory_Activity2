@@ -1,0 +1,52 @@
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.grades = []
+
+    def add_grade(self):
+        while True:
+            try:
+                grade = float(input(f"Enter grade for {self.name} (0-100): "))
+                if 0 <= grade <= 100:
+                    self.grades.append(grade)
+                    break
+                else:
+                    print("Grade must be between 0 and 100. Please try again.")
+            except ValueError:
+                print("Invalid input. Please enter a numeric value.")
+
+    def calculate_average(self):
+        if self.grades:
+            return sum(self.grades) / len(self.grades)
+        return 0.0
+
+    def display_result(self):
+        average = self.calculate_average()
+        print(f"\nStudent Name: {self.name}")
+        print(f"Grades: {', '.join(f'{g:.2f}' for g in self.grades)}")
+        print(f"Average Grade: {average:.2f}")
+
+
+def main():
+    print("----- Student Grade Management System -----")
+
+    name = input("Enter student name: ")
+    student = Student(name)
+
+    while True:
+        try:
+            count = int(input(f"How many grades do you want to enter for {name}? "))
+            if count <= 0:
+                raise ValueError("Number of grades must be greater than zero.")
+            break
+        except ValueError as e:
+            print("Invalid input:", e)
+
+    for _ in range(count):
+        student.add_grade()
+
+    student.display_result()
+
+
+if __name__ == "__main__":
+    main()
