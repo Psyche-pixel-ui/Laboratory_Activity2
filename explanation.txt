@@ -1,0 +1,16 @@
+1. Explain the overall design of your program and justify why you chose this particular class structure and set of user-defined methods.
+
+I created a Student Grade Management System using Object-Oriented Programming (OOP). 
+I used a `Student` class to store the student’s name and grades, and I added methods to input grades, calculate the average, and display the result. 
+I chose this design because it keeps the program organized and easy to understand.
+
+2. Describe how user input is handled in your program and discuss the role of exception handling (try–except) in preventing incorrect or unexpected behavior.
+
+I handled user input using the `input()` function and used `try–except` to catch errors. 
+This allows the program to handle invalid inputs such as non-numeric grades or values outside the allowed range. 
+Using exception handling prevents the program from crashing and makes it more user-friendly.
+
+3. Identify one limitation of your current implementation and explain how it could be improved using additional OOP concepts or better error handling.
+
+One limitation of my program is that it only works for one student and does not save data. 
+I can improve this by adding support for multiple students, saving data to a file, or using more OOP concepts in the future.
